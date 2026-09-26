@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre a Loucos por Vitrola — História, Oficina e Paixão Analógica</title>
+  <meta name="description" content="Conheça a história de André Luis Denani e da Loucos por Vitrola no ABC Paulista. Especialistas em manter viva a cultura dos discos de vinil e a engenharia dos aparelhos clássicos.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://loucosporvitrola.com.br/sobre-nos.html">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://loucosporvitrola.com.br/sobre-nos.html">
+  <meta property="og:title" content="Sobre Nós — Loucos por Vitrola">
+  <meta property="og:description" content="A história, bancada e o método artesanal de restauração de toca-discos vintage no ABC Paulista.">
+  <meta property="og:image" content="assets/images/workshop-bench.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+  <!-- Tailwind CSS via CDN com configuração customizada -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            burgundy: {
+              DEFAULT: '#681B1A',
+              dark: '#4A0B09',
+              light: '#8B211B',
+              hover: '#9E241E'
+            },
+            vintage: {
+              gold: '#EFD78A',
+              lightGold: '#F7E8BA',
+              beige: '#D8C58A',
+              pureBlack: '#080707',
+              surface: '#121010',
+              card: '#181515',
+              border: '#2D2625'
+            }
+          },
+          fontFamily: {
+            serif: ['DM Serif Display', 'Playfair Display', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Estilos Customizados do Design System -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-vintage-pureBlack text-[#F8F6F0]">
+
+  <!-- Header Global -->
+  <header class="site-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <a href="index.html" class="flex items-center gap-3 group" aria-label="Ir para a página inicial">
+          <img 
+            src="assets/images/logo.png" 
+            alt="Logotipo Loucos por Vitrola" 
+            class="h-14 w-auto object-contain transition-transform group-hover:scale-105"
+          />
+          <div class="hidden sm:block">
+            <span class="block text-xs uppercase tracking-widest text-[#B8B0A2] font-semibold">Oficina Especializada</span>
+            <span class="text-xs text-[var(--color-gold-vintage)] italic">"A arte em toca discos"</span>
+          </div>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-7" aria-label="Navegação Principal">
+          <a href="index.html" class="site-nav-link">Início</a>
+          <a href="sobre-nos.html" class="site-nav-link active">Sobre nós</a>
+          <a href="servicos.html" class="site-nav-link">Serviços</a>
+          <a href="galeria.html" class="site-nav-link">Galeria</a>
+          <a href="produtos.html" class="site-nav-link">Produtos</a>
+          <a href="contato.html" class="site-nav-link">Contato</a>
+        </nav>
+
+        <div class="flex items-center gap-3 sm:gap-4">
+          <button 
+            type="button" 
+            onclick="openCartDrawer()" 
+            class="cart-trigger" 
+            aria-label="Abrir carrinho de compras"
+          >
+            <span class="text-base">🛒</span>
+            <span class="hidden sm:inline">Carrinho</span>
+            <span class="cart-badge" style="display: none;">0</span>
+          </button>
+
+          <a href="produtos.html" class="btn btn-primary text-xs py-2 px-3 sm:px-4 hidden sm:inline-flex">
+            Ver Produtos
+          </a>
+
+          <button 
+            type="button" 
+            id="mobileMenuToggle" 
+            class="lg:hidden p-2 text-[#EFD78A] hover:text-white rounded border border-[var(--color-border)]"
+            aria-label="Abrir menu de navegação"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Drawer Menu Mobile -->
+  <div class="cart-drawer-overlay lg:hidden" id="mobileMenuOverlay"></div>
+  <aside class="mobile-menu-drawer lg:hidden" id="mobileMenuDrawer" aria-label="Menu Mobile">
+    <div class="flex items-center justify-between pb-6 border-b border-[var(--color-border)] mb-6">
+      <img src="assets/images/logo.png" alt="Loucos por Vitrola" class="h-12 w-auto" />
+      <button type="button" id="mobileMenuClose" class="text-white hover:text-[var(--color-gold-vintage)] p-1" aria-label="Fechar menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <nav class="flex flex-col gap-4 text-base font-medium">
+      <a href="index.html" class="site-nav-link text-lg">Início</a>
+      <a href="sobre-nos.html" class="site-nav-link text-lg active">Sobre nós</a>
+      <a href="servicos.html" class="site-nav-link text-lg">Serviços</a>
+      <a href="galeria.html" class="site-nav-link text-lg">Galeria</a>
+      <a href="produtos.html" class="site-nav-link text-lg">Produtos</a>
+      <a href="contato.html" class="site-nav-link text-lg">Contato</a>
+    </nav>
+    <div class="mt-auto pt-6 border-t border-[var(--color-border)] flex flex-col gap-3">
+      <a href="https://wa.me/5511996176660" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp text-xs py-3 w-full">
+        WhatsApp: (11) 99617-6660
+      </a>
+    </div>
+  </aside>
+
+  <!-- Conteúdo da Página Sobre Nós -->
+  <main id="main-content">
+    
+    <!-- Hero Editorial da Página -->
+    <section class="py-16 lg:py-24 border-b border-[var(--color-border)] bg-[var(--color-black-surface)] relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-8">
+            <span class="text-xs uppercase font-bold tracking-widest text-[var(--color-primary-light)] mb-3 block">
+              Quem Somos &bull; Origem &bull; Propósito
+            </span>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif text-[var(--color-text-main)] mb-6 leading-tight">
+              Paixão por música analógica e dedicação à restauração de precisão.
+            </h1>
+            <p class="text-base sm:text-lg text-[var(--color-text-muted)] leading-relaxed max-w-2xl">
+              A Loucos por Vitrola é o resultado de mais de uma década de estudo e aperfeiçoamento na mecânica fina e eletrônica dos melhores equipamentos de som dos anos 70 e 80.
+            </p>
+          </div>
+          <div class="lg:col-span-4 flex justify-start lg:justify-end">
+            <div class="p-6 bg-[var(--color-black-card)] border border-[var(--color-border-gold)] rounded-xl text-center w-full max-w-xs shadow-xl">
+              <span class="text-3xl block mb-2 font-serif text-[var(--color-gold-vintage)] font-bold">+850</span>
+              <span class="text-xs uppercase tracking-wider font-semibold text-[var(--color-text-main)] block mb-1">Aparelhos Salvos</span>
+              <span class="text-[11px] text-[var(--color-text-muted)]">Gradiente, Garrard, Polyvox, Pioneer e Technics devolvidos à vida ativa.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- História e Filosofia de André Luis Denani -->
+    <section class="py-16 lg:py-24 border-b border-[var(--color-border)]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          
+          <div>
+            <span class="text-xs uppercase font-bold tracking-widest text-[var(--color-gold-vintage)] mb-2 block">
+              A Trajetória
+            </span>
+            <h2 class="text-2xl sm:text-3xl font-serif text-[var(--color-text-main)] mb-6">
+              Como nasceu a Loucos por Vitrola no ABC Paulista
+            </h2>
+            <div class="space-y-4 text-sm sm:text-base text-[var(--color-text-muted)] leading-relaxed">
+              <p>
+                O projeto foi fundado por <strong class="text-[var(--color-text-main)]">André Luis Denani</strong>, técnico apaixonado por áudio vintage com sede no ABC Paulista. O que começou como o resgate de toca-discos familiares e itens de coleção pessoal transformou-se em uma referência reconhecida em todo o Brasil para audiófilos e amantes de vinil.
+              </p>
+              <p>
+                Ao perceber que o mercado estava inundado de aparelhos modernos de baixa qualidade que riscam discos de vinil e não entregam a fidelidade pretendida pelos artistas, André decidiu dedicar sua oficina à restauração autêntica das lendas: <strong>Gradiente, Garrard, Polyvox, Pioneer, Technics, Sansui, Sony e Marantz</strong>.
+              </p>
+              <p>
+                Na bancada da Loucos por Vitrola, nenhum aparelho sai sem passar por desmontagem minuciosa, substituição preventiva de componentes elétricos ressecados, alinhamento micrométrico de cápsula e pelo menos 48 horas de testes ininterruptos de bancada.
+              </p>
+            </div>
+          </div>
+
+          <div class="relative">
+            <div class="rounded-lg overflow-hidden border border-[var(--color-border)] shadow-2xl">
+              <img 
+                src="assets/images/workshop-bench.jpg" 
+                alt="André Luis Denani em sua bancada técnica" 
+                class="w-full h-auto object-cover"
+              />
+            </div>
+            <div class="mt-4 p-4 rounded bg-[var(--color-black-card)] border border-[var(--color-border)] text-xs text-[var(--color-gold-vintage)] flex items-center gap-3">
+              <span class="text-xl">🛠️</span>
+              <span>"Cada aparelho que entra na nossa oficina carrega décadas de histórias e memórias afetivas. Tratamos cada peça com o respeito que ela merece." — André Luis Denani</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO NOVA: Linha do Tempo da Loucos por Vitrola (Preenchendo espaços com história rica) -->
+    <section class="py-16 bg-[#0B0909] border-b border-[var(--color-border)]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="text-xs uppercase font-bold tracking-widest text-[var(--color-primary-light)] mb-2 block">
+            Evolução Contínua
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-serif text-[var(--color-text-main)] mb-3">
+            Nossa Linha do Tempo
+          </h2>
+          <p class="text-xs text-[var(--color-text-muted)]">
+            A jornada de dedicação ao áudio analógico desde os primeiros aparelhos.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          
+          <div class="p-6 bg-[var(--color-black-card)] border border-[var(--color-border)] rounded-lg relative">
+            <span class="text-xs font-mono font-bold text-[var(--color-gold-vintage)] px-2.5 py-1 bg-[var(--color-primary-dark)] rounded inline-block mb-3">2015</span>
+            <h3 class="text-sm font-serif font-bold text-[var(--color-text-main)] mb-2">Primeiro Resgate</h3>
+            <p class="text-xs text-[var(--color-text-muted)] leading-relaxed">
+              Restauração do primeiro toca-discos Gradiente Garrard de família no ABC Paulista, dando início ao acervo de manuais de serviço.
+            </p>
+          </div>
+
+          <div class="p-6 bg-[var(--color-black-card)] border border-[var(--color-border)] rounded-lg relative">
+            <span class="text-xs font-mono font-bold text-[var(--color-gold-vintage)] px-2.5 py-1 bg-[var(--color-primary-dark)] rounded inline-block mb-3">2018</span>
+            <h3 class="text-sm font-serif font-bold text-[var(--color-text-main)] mb-2">Oficina Formalizada</h3>
+            <p class="text-xs text-[var(--color-text-muted)] leading-relaxed">
+              Criação oficial da bancada Loucos por Vitrola, aquisição de equipamentos de teste analógicos e instrumentos de calibração micrométrica.
+            </p>
+          </div>
+
+          <div class="p-6 bg-[var(--color-black-card)] border border-[var(--color-border)] rounded-lg relative">
+            <span class="text-xs font-mono font-bold text-[var(--color-gold-vintage)] px-2.5 py-1 bg-[var(--color-primary-dark)] rounded inline-block mb-3">2021</span>
+            <h3 class="text-sm font-serif font-bold text-[var(--color-text-main)] mb-2">Envio Blindado Nacional</h3>
+            <p class="text-xs text-[var(--color-text-muted)] leading-relaxed">
+              Desenvolvimento da técnica de embalagem reforçada em caixa dupla, permitindo enviar aparelhos restaurados para colecionadores de todo o Brasil sem nenhuma quebra.
+            </p>
+          </div>
+
+          <div class="p-6 bg-[var(--color-black-card)] border border-[var(--color-border)] rounded-lg relative">
+            <span class="text-xs font-mono font-bold text-[var(--color-gold-vintage)] px-2.5 py-1 bg-[var(--color-primary-dark)] rounded inline-block mb-3">Hoje</span>
+            <h3 class="text-sm font-serif font-bold text-[var(--color-text-main)] mb-2">Referência em Vinil</h3>
+            <p class="text-xs text-[var(--color-text-muted)] leading-relaxed">
+              Mais de 850 toca-discos restaurados, comunidade ativa no Instagram e YouTube e garantia técnica de bancada de 90 dias com laudo.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SEÇÃO NOVA: O Instrumental de Precisão da Bancada -->
+    <section class="py-16 border-b border-[var(--color-border)] bg-[var(--color-black-surface)]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <span class="text-xs uppercase font-bold tracking-widest text-[var(--color-primary-light)] mb-2 block">
+            Rigor Científico no Som
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-serif text-[var(--color-text-main)] mb-3">
+            O Arsenal Técnico de André Luis Denani
+          </h2>
+          <p class="text-xs text-[var(--color-text-muted)]">
+            Equipamentos que garantem a exatidão das rotações e a resposta harmônica das cápsulas.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <div class="p-6 bg-[var(--color-black-card)] border border-[var(--color-border)] rounded-lg">
+            <span class="text-2xl block mb-2">🔬</span>
+            <h3 class="text-sm font-serif font-bold text-[var(--color-gold-vintage)] mb-1">Disco Estroboscópico 60Hz</h3>
+            <p class="text-xs text-[var(--color-text-muted)] leading-relaxed">
+              Calibração visual sob luz de néon para travar a rotação exata de 33 ⅓, 45 e 78 RPM sem flutuações audíveis.
+            </p>
+          </div>
+
+          <div class="p-6 bg-[var(--color-black-card)] border border-[var(--color-border)] rounded-lg">
+            <span class="text-2xl block mb-2">⚖️</span>
+            <h3 class="text-sm font-serif font-bold text-[var(--color-gold-vintage)] mb-1">Balança Digital de Miligramas</h3>
+            <p class="text-xs text-[var(--color-text-muted)] leading-relaxed">
+              Aferição de peso de trilhagem com precisão de duas casas decimais, respeitando as especificações da fábrica.
+            </p>
+          </div>
+
+          <div class="p-6 bg-[var(--color-black-card)] border border-[var(--color-border)] rounded-lg">
+            <span class="text-2xl block mb-2">📐</span>
+            <h3 class="text-sm font-serif font-bold text-[var(--color-gold-vintage)] mb-1">Protractor Baerwald / Stevenson</h3>
+            <p class="text-xs text-[var(--color-text-muted)] leading-relaxed">
+              Gabarito geométrico para alinhamento da agulha em dois pontos nulos do disco, eliminando distorção nos sulcos internos.
+            </p>
+          </div>
+
+          <div class="p-6 bg-[var(--color-black-card)] border border-[var(--color-border)] rounded-lg">
+            <span class="text-2xl block mb-2">✨</span>
+            <h3 class="text-sm font-serif font-bold text-[var(--color-gold-vintage)] mb-1">Politriz Orbital de Acrílico</h3>
+            <p class="text-xs text-[var(--color-text-muted)] leading-relaxed">
+              Processo de polimento térmico e químico em 3 fases para resgatar a transparência cristalina de tampas riscadas.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Vintage vs. Vitrolas Modernas: O Manifesto Técnico -->
+    <section class="py-16 lg:py-24 border-b border-[var(--color-border)]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs uppercase font-bold tracking-widest text-[var(--color-primary-light)] mb-2 block">
+            Por Que Investir em Clássicos?
+          </span>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-serif text-[var(--color-text-main)] mb-4">
+            A verdade entre o áudio vintage e as "maletinhas" modernas
+          </h2>
+          <p class="text-sm text-[var(--color-text-muted)]">
+            Entenda por que restaurar ou adquirir um toca-discos vintage das décadas de 70/80 é o único caminho para preservar seus discos e vivenciar a alta fidelidade analógica.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <!-- Coluna Negativa: Aparelhos Modernos de Plástico -->
+          <div class="vintage-card p-6 border-red-950/50 bg-[#140D0D]">
+            <div class="flex items-center gap-3 mb-4 text-red-400 font-bold text-sm uppercase">
+              <span class="text-xl">⚠️</span>
+              Vitrolas Modernas Plásticas (Estilo Maleta)
+            </div>
+            <ul class="space-y-3 text-xs text-[var(--color-text-muted)]">
+              <li class="flex items-start gap-2">
+                <span class="text-red-500 font-bold">&times;</span>
+                <span><strong>Braços sem contrapeso real:</strong> Aplicam peso de 5 a 7 gramas sobre o vinil, desgastando e destruindo os sulcos após poucas reproduções.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500 font-bold">&times;</span>
+                <span><strong>Pratos plásticos leves:</strong> Não têm inércia, provocando variações de velocidade (wow &amp; flutter) audíveis e desafinações.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500 font-bold">&times;</span>
+                <span><strong>Cápsulas de cerâmica rudimentares:</strong> Som estridente, sem separação de canais estéreo e com graves distorcidos.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500 font-bold">&times;</span>
+                <span><strong>Estrutura descartável:</strong> Peças coladas que não permitem manutenção nem substituição de peças.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Coluna Positiva: Toca-Discos Vintage Restaurados -->
+          <div class="vintage-card p-6 border-[var(--color-primary-light)]/40 bg-[var(--color-black-card)]">
+            <div class="flex items-center gap-3 mb-4 text-[var(--color-gold-vintage)] font-bold text-sm uppercase">
+              <span class="text-xl">⭐</span>
+              Toca-Discos Vintage Restaurados (Oficina Loucos por Vitrola)
+            </div>
+            <ul class="space-y-3 text-xs text-[var(--color-text-main)]">
+              <li class="flex items-start gap-2">
+                <span class="text-green-400 font-bold">&check;</span>
+                <span><strong>Braços balanceados com tracking force preciso:</strong> Ajustados entre 1.5g e 2.0g com balança digital, preservando seu acervo por gerações.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-400 font-bold">&check;</span>
+                <span><strong>Pratos pesados de alumínio/ferro fundido:</strong> Rotação sólida como uma rocha com estroboscópio e calibração de pitch.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-400 font-bold">&check;</span>
+                <span><strong>Cápsulas Magnéticas Hi-Fi (Audio-Technica / Shure / Le-Son):</strong> Resposta de frequência completa de 20Hz a 20.000Hz com graves profundos e agudos cristalinos.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-400 font-bold">&check;</span>
+                <span><strong>Durabilidade eterna:</strong> Construídos com engrenagens metálicas, madeira de lei e componentes reparáveis.</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Nossos 4 Pilares -->
+    <section class="py-16 lg:py-24 border-b border-[var(--color-border)] bg-[#0C0A0A]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="text-xs uppercase font-bold tracking-widest text-[var(--color-primary-light)] mb-2 block">
+            Nossos Princípios
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-serif text-[var(--color-text-main)]">
+            Compromisso inegociável com a qualidade
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <div class="p-6 bg-[var(--color-black-card)] border border-[var(--color-border)] rounded">
+            <span class="text-2xl block mb-3 text-[var(--color-gold-vintage)]">🔍</span>
+            <h3 class="text-base font-serif text-[var(--color-text-main)] mb-2">Autenticidade</h3>
+            <p class="text-xs text-[var(--color-text-muted)] leading-relaxed">
+              Preservamos a originalidade estética e técnica dos equipamentos, mantendo gabinetes de fábrica e serigrafias históricas.
+            </p>
+          </div>
+
+          <div class="p-6 bg-[var(--color-black-card)] border border-[var(--color-border)] rounded">
+            <span class="text-2xl block mb-3 text-[var(--color-gold-vintage)]">⚖️</span>
+            <h3 class="text-base font-serif text-[var(--color-text-main)] mb-2">Calibração Aferida</h3>
+            <p class="text-xs text-[var(--color-text-muted)] leading-relaxed">
+              Utilizamos discos estroboscópicos de precisão, transferidores de alinhamento e balanças digitais de peso de trilhagem.
+            </p>
+          </div>
+
+          <div class="p-6 bg-[var(--color-black-card)] border border-[var(--color-border)] rounded">
+            <span class="text-2xl block mb-3 text-[var(--color-gold-vintage)]">📦</span>
+            <h3 class="text-base font-serif text-[var(--color-text-main)] mb-2">Envio Blindado</h3>
+            <p class="text-xs text-[var(--color-text-muted)] leading-relaxed">
+              Trava de transporte no braço, prato retirado e embalado em separado, calços de alta densidade para viagem segura.
+            </p>
+          </div>
+
+          <div class="p-6 bg-[var(--color-black-card)] border border-[var(--color-border)] rounded">
+            <span class="text-2xl block mb-3 text-[var(--color-gold-vintage)]">🤝</span>
+            <h3 class="text-base font-serif text-[var(--color-text-main)] mb-2">Suporte Técnico Real</h3>
+            <p class="text-xs text-[var(--color-text-muted)] leading-relaxed">
+              Atendimento pós-venda direto pelo WhatsApp com o próprio técnico para tirar dúvidas de ligação e regulagem no receiver.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA de Contato -->
+    <section class="py-16 bg-[var(--color-primary-dark)] text-center">
+      <div class="max-w-3xl mx-auto px-4">
+        <h2 class="text-2xl sm:text-3xl font-serif text-[var(--color-gold-vintage)] mb-4">
+          Quer agendar uma visita ou enviar seu toca-discos?
+        </h2>
+        <p class="text-sm text-[var(--color-text-main)] opacity-90 mb-8 leading-relaxed">
+          Atendemos no ABC Paulista com agendamento prévio ou orientamos a melhor forma de envio do seu aparelho para restauração.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="https://wa.me/5511996176660" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp text-xs py-3 px-6 shadow-xl">
+            Falar com André no WhatsApp: (11) 99617-6660
+          </a>
+          <a href="produtos.html" class="btn btn-outline text-xs py-3 px-6">
+            Conhecer Toca-Discos à Venda
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé Global -->
+  <footer class="site-footer py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-10 border-b border-[var(--color-border)]">
+        <div>
+          <img src="assets/images/logo.png" alt="Loucos por Vitrola" class="h-16 w-auto mb-4" />
+          <p class="text-xs text-[var(--color-text-muted)] leading-relaxed mb-4">
+            Especialistas na restauração de aparelhos vintage, venda de equipamentos calibrados e celebração da cultura analógica no ABC Paulista.
+          </p>
+          <span class="text-xs italic text-[var(--color-gold-vintage)]">"A arte em toca discos"</span>
+        </div>
+        <div>
+          <h4 class="text-xs uppercase font-bold tracking-widest text-[var(--color-gold-vintage)] mb-4">Navegação</h4>
+          <ul class="space-y-2 text-xs text-[var(--color-text-muted)]">
+            <li><a href="index.html" class="hover:text-white transition-colors">Início</a></li>
+            <li><a href="sobre-nos.html" class="hover:text-white transition-colors">Sobre a Oficina</a></li>
+            <li><a href="servicos.html" class="hover:text-white transition-colors">Serviços Técnicos</a></li>
+            <li><a href="galeria.html" class="hover:text-white transition-colors">Galeria de Projetos</a></li>
+            <li><a href="produtos.html" class="hover:text-white transition-colors">Catálogo de Vitrolas</a></li>
+            <li><a href="contato.html" class="hover:text-white transition-colors">Fale Conosco</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs uppercase font-bold tracking-widest text-[var(--color-gold-vintage)] mb-4">Marcas Atendidas</h4>
+          <ul class="space-y-1.5 text-xs text-[var(--color-text-muted)]">
+            <li>&bull; Gradiente (D30, B25, TT-II)</li>
+            <li>&bull; Garrard (6300, S95, DD75)</li>
+            <li>&bull; Polyvox (TD 2000, TD 6000)</li>
+            <li>&bull; Pioneer &bull; Technics &bull; Philips</li>
+            <li>&bull; Sony &bull; CCE &bull; Sansui &bull; Marantz</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs uppercase font-bold tracking-widest text-[var(--color-gold-vintage)] mb-4">Atendimento</h4>
+          <ul class="space-y-2.5 text-xs text-[var(--color-text-muted)]">
+            <li class="flex items-center gap-2">
+              <span class="text-green-500 font-bold">WhatsApp:</span>
+              <a href="https://wa.me/5511996176660" target="_blank" rel="noopener noreferrer" class="hover:text-white font-mono">
+                (11) 99617-6660
+              </a>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-[var(--color-gold-vintage)]">Instagram:</span>
+              <a href="https://instagram.com/loucos_por_vitrola" target="_blank" rel="noopener noreferrer" class="hover:text-white">
+                @loucos_por_vitrola
+              </a>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-blue-400">Facebook:</span>
+              <a href="https://facebook.com/loucosporvitrola" target="_blank" rel="noopener noreferrer" class="hover:text-white">
+                Loucos por Vitrola
+              </a>
+            </li>
+            <li class="pt-2 text-[11px] text-[var(--color-text-muted)]">
+              Localização: Região do ABC Paulista &bull; São Paulo - SP<br>
+              Envios seguros com embalagens especiais para todo o Brasil.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-[var(--color-text-muted)] gap-4">
+        <p>&copy; <span class="current-year">2026</span> Loucos por Vitrola. Todos os direitos reservados.</p>
+        <p class="italic text-[var(--color-gold-muted)]">Construído com fidelidade analógica, HTML5, CSS3 e Vanilla JS.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botão Flutuante do WhatsApp -->
+  <a 
+    href="https://wa.me/5511996176660?text=Olá,%20André!%20Li%20sobre%20a%20oficina%20Loucos%20por%20Vitrola%20e%20gostaria%20de%20conversar." 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    class="fixed bottom-6 right-6 z-40 bg-[#25D366] hover:bg-[#20BA5A] text-black w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110"
+    aria-label="Falar conosco pelo WhatsApp"
+  >
+    <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+    </svg>
+  </a>
+
+  <!-- Container de Modais -->
+  <div id="productModalContainer"></div>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

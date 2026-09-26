@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Toca-Discos Vintage Revisados — Loucos por Vitrola</title>
+  <meta name="description" content="Catálogo de toca-discos vintage restaurados e calibrados com garantia. Modelos Gradiente, Garrard, Polyvox, Pioneer, Technics e Marantz prontos para tocar. Compre pelo WhatsApp.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://loucosporvitrola.com.br/produtos.html">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://loucosporvitrola.com.br/produtos.html">
+  <meta property="og:title" content="Catálogo de Toca-Discos Vintage — Loucos por Vitrola">
+  <meta property="og:description" content="Aparelhos 100% revisados, com garantia e envio seguro para todo o Brasil.">
+  <meta property="og:image" content="assets/images/product-gradiente-d30.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+  <!-- Tailwind CSS via CDN com configuração customizada -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            burgundy: {
+              DEFAULT: '#681B1A',
+              dark: '#4A0B09',
+              light: '#8B211B',
+              hover: '#9E241E'
+            },
+            vintage: {
+              gold: '#EFD78A',
+              lightGold: '#F7E8BA',
+              beige: '#D8C58A',
+              pureBlack: '#080707',
+              surface: '#121010',
+              card: '#181515',
+              border: '#2D2625'
+            }
+          },
+          fontFamily: {
+            serif: ['DM Serif Display', 'Playfair Display', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Estilos Customizados do Design System -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-vintage-pureBlack text-[#F8F6F0]">
+
+  <!-- Header Global -->
+  <header class="site-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <a href="index.html" class="flex items-center gap-3 group" aria-label="Ir para a página inicial">
+          <img 
+            src="assets/images/logo.png" 
+            alt="Logotipo Loucos por Vitrola" 
+            class="h-14 w-auto object-contain transition-transform group-hover:scale-105"
+          />
+          <div class="hidden sm:block">
+            <span class="block text-xs uppercase tracking-widest text-[#B8B0A2] font-semibold">Oficina Especializada</span>
+            <span class="text-xs text-[var(--color-gold-vintage)] italic">"A arte em toca discos"</span>
+          </div>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-7" aria-label="Navegação Principal">
+          <a href="index.html" class="site-nav-link">Início</a>
+          <a href="sobre-nos.html" class="site-nav-link">Sobre nós</a>
+          <a href="servicos.html" class="site-nav-link">Serviços</a>
+          <a href="galeria.html" class="site-nav-link">Galeria</a>
+          <a href="produtos.html" class="site-nav-link active">Produtos</a>
+          <a href="contato.html" class="site-nav-link">Contato</a>
+        </nav>
+
+        <div class="flex items-center gap-3 sm:gap-4">
+          <button 
+            type="button" 
+            onclick="openCartDrawer()" 
+            class="cart-trigger" 
+            aria-label="Abrir carrinho de compras"
+          >
+            <span class="text-base">🛒</span>
+            <span class="hidden sm:inline">Carrinho</span>
+            <span class="cart-badge" style="display: none;">0</span>
+          </button>
+
+          <a href="produtos.html" class="btn btn-primary text-xs py-2 px-3 sm:px-4 hidden sm:inline-flex">
+            Ver Produtos
+          </a>
+
+          <button 
+            type="button" 
+            id="mobileMenuToggle" 
+            class="lg:hidden p-2 text-[#EFD78A] hover:text-white rounded border border-[var(--color-border)]"
+            aria-label="Abrir menu de navegação"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Drawer Menu Mobile -->
+  <div class="cart-drawer-overlay lg:hidden" id="mobileMenuOverlay"></div>
+  <aside class="mobile-menu-drawer lg:hidden" id="mobileMenuDrawer" aria-label="Menu Mobile">
+    <div class="flex items-center justify-between pb-6 border-b border-[var(--color-border)] mb-6">
+      <img src="assets/images/logo.png" alt="Loucos por Vitrola" class="h-12 w-auto" />
+      <button type="button" id="mobileMenuClose" class="text-white hover:text-[var(--color-gold-vintage)] p-1" aria-label="Fechar menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <nav class="flex flex-col gap-4 text-base font-medium">
+      <a href="index.html" class="site-nav-link text-lg">Início</a>
+      <a href="sobre-nos.html" class="site-nav-link text-lg">Sobre nós</a>
+      <a href="servicos.html" class="site-nav-link text-lg">Serviços</a>
+      <a href="galeria.html" class="site-nav-link text-lg">Galeria</a>
+      <a href="produtos.html" class="site-nav-link text-lg active">Produtos</a>
+      <a href="contato.html" class="site-nav-link text-lg">Contato</a>
+    </nav>
+    <div class="mt-auto pt-6 border-t border-[var(--color-border)] flex flex-col gap-3">
+      <a href="https://wa.me/5511996176660" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp text-xs py-3 w-full">
+        WhatsApp: (11) 99617-6660
+      </a>
+    </div>
+  </aside>
+
+  <!-- Conteúdo de Produtos -->
+  <main id="main-content">
+    
+    <!-- Hero do Catálogo -->
+    <section class="py-16 lg:py-20 border-b border-[var(--color-border)] bg-[var(--color-black-surface)]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div class="max-w-2xl">
+            <span class="text-xs uppercase font-bold tracking-widest text-[var(--color-primary-light)] mb-3 block">
+              Catálogo Oficial &bull; Peças Únicas &bull; Garantia de 90 Dias
+            </span>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif text-[var(--color-text-main)] mb-4 leading-tight">
+              Toca-discos vintage restaurados, regulados e prontos para audição.
+            </h1>
+            <p class="text-sm sm:text-base text-[var(--color-text-muted)] leading-relaxed">
+              Cada aparelho do nosso acervo é único e passou por criteriosa restauração de bancada por André Luis Denani. Acompanha agulha nova, tampa polida e suporte pós-venda.
+            </p>
+          </div>
+          <div class="bg-[var(--color-black-card)] p-4 rounded-lg border border-[var(--color-border)] text-xs text-[var(--color-text-muted)] flex flex-col gap-1.5 min-w-[240px]">
+            <span class="text-[var(--color-gold-vintage)] font-bold uppercase tracking-wider text-[11px]">Certificado de Bancada</span>
+            <span>&bull; Rotação aferida por estroboscópio</span>
+            <span>&bull; Cápsula e agulha novas instaladas</span>
+            <span>&bull; 90 dias de garantia com laudo físico</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Barra de Filtros Multifuncional e Busca -->
+    <section class="py-6 border-b border-[var(--color-border)] bg-[#0C0A0A] sticky top-20 z-30 shadow-lg">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+        
+        <!-- Linha 1: Filtros de Fabricantes e Busca -->
+        <div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4">
+          
+          <!-- Filtro de Fabricantes (Tabs) -->
+          <div class="flex items-center gap-1.5 overflow-x-auto pb-2 lg:pb-0" id="brandFilterTabs" role="tablist">
+            <button type="button" class="filter-tab active btn btn-primary text-xs py-1.5 px-3 rounded-full" data-brand="all">
+              Todos (9)
+            </button>
+            <button type="button" class="filter-tab btn btn-outline text-xs py-1.5 px-3 rounded-full" data-brand="Gradiente">
+              Gradiente
+            </button>
+            <button type="button" class="filter-tab btn btn-outline text-xs py-1.5 px-3 rounded-full" data-brand="Garrard">
+              Garrard
+            </button>
+            <button type="button" class="filter-tab btn btn-outline text-xs py-1.5 px-3 rounded-full" data-brand="Polyvox">
+              Polyvox
+            </button>
+            <button type="button" class="filter-tab btn btn-outline text-xs py-1.5 px-3 rounded-full" data-brand="Pioneer">
+              Pioneer
+            </button>
+            <button type="button" class="filter-tab btn btn-outline text-xs py-1.5 px-3 rounded-full" data-brand="Technics">
+              Technics
+            </button>
+            <button type="button" class="filter-tab btn btn-outline text-xs py-1.5 px-3 rounded-full" data-brand="Marantz">
+              Marantz
+            </button>
+          </div>
+
+          <!-- Campo de Busca em Tempo Real -->
+          <div class="relative w-full lg:w-72">
+            <input 
+              type="text" 
+              id="productSearchInput" 
+              placeholder="Buscar por modelo, tração..." 
+              class="w-full bg-[var(--color-black-card)] border border-[var(--color-border)] rounded py-2 pl-9 pr-3 text-xs text-[var(--color-text-main)] placeholder-[#6E665E] focus:border-[var(--color-gold-vintage)] focus:outline-none"
+              aria-label="Buscar produtos no catálogo"
+            />
+            <svg class="w-4 h-4 text-[var(--color-text-muted)] absolute left-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+
+        </div>
+
+        <!-- Linha 2: Filtros Rápidos de Tração e Faixa de Preço -->
+        <div class="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-[var(--color-border)]/60 text-xs">
+          
+          <div class="flex items-center gap-2">
+            <span class="text-[var(--color-text-muted)] text-[11px] font-semibold">Tração:</span>
+            <button type="button" class="drive-filter active px-2.5 py-1 rounded bg-[var(--color-primary-dark)] text-[var(--color-gold-vintage)] border border-[var(--color-primary-light)] font-medium" data-drive="all">
+              Todas
+            </button>
+            <button type="button" class="drive-filter px-2.5 py-1 rounded bg-[var(--color-black-card)] text-[var(--color-text-muted)] border border-[var(--color-border)] hover:text-white" data-drive="Direct Drive">
+              Direct Drive
+            </button>
+            <button type="button" class="drive-filter px-2.5 py-1 rounded bg-[var(--color-black-card)] text-[var(--color-text-muted)] border border-[var(--color-border)] hover:text-white" data-drive="Belt-Drive">
+              Belt-Drive (Correia)
+            </button>
+          </div>
+
+          <div class="text-[11px] text-[var(--color-text-muted)]">
+            Enviamos para todo o Brasil com embalagem especial anti-impacto.
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Grid do Catálogo de Produtos -->
+    <section class="py-16 lg:py-24 border-b border-[var(--color-border)]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Contador de Resultados -->
+        <div class="flex items-center justify-between mb-8 pb-4 border-b border-[var(--color-border)] text-xs text-[var(--color-text-muted)]">
+          <div>
+            Exibindo <span id="resultsCount" class="font-bold text-[var(--color-gold-vintage)]">9</span> aparelhos vintage revisados
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            <span>Estoque conferido e atualizado</span>
+          </div>
+        </div>
+
+        <!-- Grid Principal de Produtos -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8" id="productsCatalogGrid">
+          <!-- Renderizado via JavaScript dinamicamente -->
+        </div>
+
+        <!-- Estado Vazio (Nenhum produto encontrado) -->
+        <div id="noProductsFound" class="hidden py-20 text-center flex-col items-center justify-center">
+          <span class="text-4xl block mb-3">📻</span>
+          <h3 class="text-lg font-serif text-[var(--color-text-main)] mb-2">Nenhum aparelho encontrado</h3>
+          <p class="text-xs text-[var(--color-text-muted)] max-w-sm mb-6">
+            Não encontramos nenhum equipamento correspondente aos filtros selecionados.
+          </p>
+          <button type="button" id="resetFiltersBtn" class="btn btn-outline text-xs py-2 px-4">
+            Limpar Filtros e Busca
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Informações sobre Compra e Envio (3 Colunas Fortes) -->
+    <section class="py-16 bg-[var(--color-black-surface)] border-b border-[var(--color-border)]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <div class="p-6 bg-[var(--color-black-card)] rounded-lg border border-[var(--color-border)]">
+            <span class="text-2xl block mb-2 text-[var(--color-gold-vintage)]">🛒</span>
+            <h3 class="text-sm font-serif font-bold text-[var(--color-text-main)] mb-1">Como Funciona a Compra?</h3>
+            <p class="text-xs text-[var(--color-text-muted)] leading-relaxed">
+              Adicione os aparelhos ao carrinho e clique em "Enviar Pedido via WhatsApp". O pedido vai direto para André Luis Denani, que confirma a disponibilidade e combina a entrega ou retirada no ABC Paulista.
+            </p>
+          </div>
+
+          <div class="p-6 bg-[var(--color-black-card)] rounded-lg border border-[var(--color-border)]">
+            <span class="text-2xl block mb-2 text-[var(--color-gold-vintage)]">🛡️</span>
+            <h3 class="text-sm font-serif font-bold text-[var(--color-text-main)] mb-1">Garantia Técnica de Bancada</h3>
+            <p class="text-xs text-[var(--color-text-muted)] leading-relaxed">
+              Todos os toca-discos contam com 90 dias de garantia completa para qualquer ajuste mecânico ou elétrico. Você tem tranquilidade total para desfrutar da sua música.
+            </p>
+          </div>
+
+          <div class="p-6 bg-[var(--color-black-card)] rounded-lg border border-[var(--color-border)]">
+            <span class="text-2xl block mb-2 text-[var(--color-gold-vintage)]">📦</span>
+            <h3 class="text-sm font-serif font-bold text-[var(--color-text-main)] mb-1">Embalagem Personalizada</h3>
+            <p class="text-xs text-[var(--color-text-muted)] leading-relaxed">
+              Enviamos para todo o Brasil. Braço travado, prato e contrapeso desmontados e embalados em caixas de parede dupla anti-impacto.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé Global -->
+  <footer class="site-footer py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-10 border-b border-[var(--color-border)]">
+        <div>
+          <img src="assets/images/logo.png" alt="Loucos por Vitrola" class="h-16 w-auto mb-4" />
+          <p class="text-xs text-[var(--color-text-muted)] leading-relaxed mb-4">
+            Especialistas na restauração de aparelhos vintage, venda de equipamentos calibrados e celebração da cultura analógica no ABC Paulista.
+          </p>
+          <span class="text-xs italic text-[var(--color-gold-vintage)]">"A arte em toca discos"</span>
+        </div>
+        <div>
+          <h4 class="text-xs uppercase font-bold tracking-widest text-[var(--color-gold-vintage)] mb-4">Navegação</h4>
+          <ul class="space-y-2 text-xs text-[var(--color-text-muted)]">
+            <li><a href="index.html" class="hover:text-white transition-colors">Início</a></li>
+            <li><a href="sobre-nos.html" class="hover:text-white transition-colors">Sobre a Oficina</a></li>
+            <li><a href="servicos.html" class="hover:text-white transition-colors">Serviços Técnicos</a></li>
+            <li><a href="galeria.html" class="hover:text-white transition-colors">Galeria de Projetos</a></li>
+            <li><a href="produtos.html" class="hover:text-white transition-colors">Catálogo de Vitrolas</a></li>
+            <li><a href="contato.html" class="hover:text-white transition-colors">Fale Conosco</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs uppercase font-bold tracking-widest text-[var(--color-gold-vintage)] mb-4">Marcas Atendidas</h4>
+          <ul class="space-y-1.5 text-xs text-[var(--color-text-muted)]">
+            <li>&bull; Gradiente (D30, B25, TT-II)</li>
+            <li>&bull; Garrard (6300, S95, DD75)</li>
+            <li>&bull; Polyvox (TD 2000, TD 6000)</li>
+            <li>&bull; Pioneer &bull; Technics &bull; Philips</li>
+            <li>&bull; Sony &bull; CCE &bull; Sansui &bull; Marantz</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs uppercase font-bold tracking-widest text-[var(--color-gold-vintage)] mb-4">Atendimento</h4>
+          <ul class="space-y-2.5 text-xs text-[var(--color-text-muted)]">
+            <li class="flex items-center gap-2">
+              <span class="text-green-500 font-bold">WhatsApp:</span>
+              <a href="https://wa.me/5511996176660" target="_blank" rel="noopener noreferrer" class="hover:text-white font-mono">
+                (11) 99617-6660
+              </a>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-[var(--color-gold-vintage)]">Instagram:</span>
+              <a href="https://instagram.com/loucos_por_vitrola" target="_blank" rel="noopener noreferrer" class="hover:text-white">
+                @loucos_por_vitrola
+              </a>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-blue-400">Facebook:</span>
+              <a href="https://facebook.com/loucosporvitrola" target="_blank" rel="noopener noreferrer" class="hover:text-white">
+                Loucos por Vitrola
+              </a>
+            </li>
+            <li class="pt-2 text-[11px] text-[var(--color-text-muted)]">
+              Localização: Região do ABC Paulista &bull; São Paulo - SP<br>
+              Envios seguros com embalagens especiais para todo o Brasil.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-[var(--color-text-muted)] gap-4">
+        <p>&copy; <span class="current-year">2026</span> Loucos por Vitrola. Todos os direitos reservados.</p>
+        <p class="italic text-[var(--color-gold-muted)]">Construído com fidelidade analógica, HTML5, CSS3 e Vanilla JS.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botão Flutuante do WhatsApp -->
+  <a 
+    href="https://wa.me/5511996176660?text=Olá,%20André!%20Tenho%20interesse%20em%20comprar%20um%20toca-discos%20do%20catálogo." 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    class="fixed bottom-6 right-6 z-40 bg-[#25D366] hover:bg-[#20BA5A] text-black w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110"
+    aria-label="Falar conosco pelo WhatsApp"
+  >
+    <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+    </svg>
+  </a>
+
+  <!-- Container para Modal de Detalhes do Produto -->
+  <div id="productModalContainer"></div>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Lógica de Filtro e Busca dos Produtos -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const grid = document.getElementById("productsCatalogGrid");
+      const noResults = document.getElementById("noProductsFound");
+      const countEl = document.getElementById("resultsCount");
+      const searchInput = document.getElementById("productSearchInput");
+      const brandTabs = document.querySelectorAll(".filter-tab");
+      const driveFilters = document.querySelectorAll(".drive-filter");
+      const resetBtn = document.getElementById("resetFiltersBtn");
+
+      let currentBrand = "all";
+      let currentDrive = "all";
+      let currentQuery = "";
+
+      function filterProducts() {
+        const all = getAllProducts();
+        const filtered = all.filter(p => {
+          const matchBrand = (currentBrand === "all") || (p.brand.toLowerCase() === currentBrand.toLowerCase());
+          const matchDrive = (currentDrive === "all") || (p.driveType.toLowerCase() === currentDrive.toLowerCase());
+          const matchQuery = !currentQuery || 
+            p.name.toLowerCase().includes(currentQuery.toLowerCase()) ||
+            p.shortDescription.toLowerCase().includes(currentQuery.toLowerCase()) ||
+            p.brand.toLowerCase().includes(currentQuery.toLowerCase()) ||
+            p.driveType.toLowerCase().includes(currentQuery.toLowerCase());
+          return matchBrand && matchDrive && matchQuery;
+        });
+
+        if (countEl) countEl.textContent = filtered.length;
+
+        if (filtered.length === 0) {
+          if (grid) grid.innerHTML = "";
+          if (noResults) noResults.classList.remove("hidden");
+        } else {
+          if (noResults) noResults.classList.add("hidden");
+          if (grid) {
+            grid.innerHTML = filtered.map(p => renderProductCard(p)).join('');
+          }
+        }
+      }
+
+      // Eventos das Abas de Marca
+      brandTabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+          brandTabs.forEach(t => {
+            t.classList.remove("active", "btn-primary");
+            t.classList.add("btn-outline");
+          });
+          tab.classList.add("active", "btn-primary");
+          tab.classList.remove("btn-outline");
+
+          currentBrand = tab.getAttribute("data-brand");
+          filterProducts();
+        });
+      });
+
+      // Eventos do Filtro de Tração
+      driveFilters.forEach(btn => {
+        btn.addEventListener("click", () => {
+          driveFilters.forEach(b => {
+            b.classList.remove("active", "bg-[var(--color-primary-dark)]", "text-[var(--color-gold-vintage)]", "border-[var(--color-primary-light)]");
+            b.classList.add("bg-[var(--color-black-card)]", "text-[var(--color-text-muted)]", "border-[var(--color-border)]");
+          });
+          btn.classList.add("active", "bg-[var(--color-primary-dark)]", "text-[var(--color-gold-vintage)]", "border-[var(--color-primary-light)]");
+          btn.classList.remove("bg-[var(--color-black-card)]", "text-[var(--color-text-muted)]", "border-[var(--color-border)]");
+
+          currentDrive = btn.getAttribute("data-drive");
+          filterProducts();
+        });
+      });
+
+      // Evento da Busca
+      if (searchInput) {
+        searchInput.addEventListener("input", (e) => {
+          currentQuery = e.target.value.trim();
+          filterProducts();
+        });
+      }
+
+      // Botão Limpar Filtros
+      if (resetBtn) {
+        resetBtn.addEventListener("click", () => {
+          currentBrand = "all";
+          currentDrive = "all";
+          currentQuery = "";
+          if (searchInput) searchInput.value = "";
+          
+          brandTabs.forEach(t => {
+            t.classList.remove("active", "btn-primary");
+            t.classList.add("btn-outline");
+            if (t.getAttribute("data-brand") === "all") {
+              t.classList.add("active", "btn-primary");
+              t.classList.remove("btn-outline");
+            }
+          });
+
+          driveFilters.forEach(b => {
+            b.classList.remove("active", "bg-[var(--color-primary-dark)]", "text-[var(--color-gold-vintage)]", "border-[var(--color-primary-light)]");
+            b.classList.add("bg-[var(--color-black-card)]", "text-[var(--color-text-muted)]", "border-[var(--color-border)]");
+            if (b.getAttribute("data-drive") === "all") {
+              b.classList.add("active", "bg-[var(--color-primary-dark)]", "text-[var(--color-gold-vintage)]", "border-[var(--color-primary-light)]");
+              b.classList.remove("bg-[var(--color-black-card)]", "text-[var(--color-text-muted)]", "border-[var(--color-border)]");
+            }
+          });
+
+          filterProducts();
+        });
+      }
+
+      // Render inicial
+      filterProducts();
+    });
+  </script>
+</body>
+</html>

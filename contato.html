@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fale com a Loucos por Vitrola — WhatsApp, Atendimento e Orçamentos</title>
+  <meta name="description" content="Entre em contato com André Luis Denani da Loucos por Vitrola. WhatsApp (11) 99617-6660, atendimento no ABC Paulista e suporte para todo o Brasil.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://loucosporvitrola.com.br/contato.html">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://loucosporvitrola.com.br/contato.html">
+  <meta property="og:title" content="Contato — Loucos por Vitrola">
+  <meta property="og:description" content="Fale diretamente com o especialista em toca-discos vintage no ABC Paulista via WhatsApp, Instagram ou agendamento presencial.">
+  <meta property="og:image" content="assets/images/logo.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+  <!-- Tailwind CSS via CDN com configuração customizada -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            burgundy: {
+              DEFAULT: '#681B1A',
+              dark: '#4A0B09',
+              light: '#8B211B',
+              hover: '#9E241E'
+            },
+            vintage: {
+              gold: '#EFD78A',
+              lightGold: '#F7E8BA',
+              beige: '#D8C58A',
+              pureBlack: '#080707',
+              surface: '#121010',
+              card: '#181515',
+              border: '#2D2625'
+            }
+          },
+          fontFamily: {
+            serif: ['DM Serif Display', 'Playfair Display', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Estilos Customizados do Design System -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-vintage-pureBlack text-[#F8F6F0]">
+
+  <!-- Header Global -->
+  <header class="site-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <a href="index.html" class="flex items-center gap-3 group" aria-label="Ir para a página inicial">
+          <img 
+            src="assets/images/logo.png" 
+            alt="Logotipo Loucos por Vitrola" 
+            class="h-14 w-auto object-contain transition-transform group-hover:scale-105"
+          />
+          <div class="hidden sm:block">
+            <span class="block text-xs uppercase tracking-widest text-[#B8B0A2] font-semibold">Oficina Especializada</span>
+            <span class="text-xs text-[var(--color-gold-vintage)] italic">"A arte em toca discos"</span>
+          </div>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-7" aria-label="Navegação Principal">
+          <a href="index.html" class="site-nav-link">Início</a>
+          <a href="sobre-nos.html" class="site-nav-link">Sobre nós</a>
+          <a href="servicos.html" class="site-nav-link">Serviços</a>
+          <a href="galeria.html" class="site-nav-link">Galeria</a>
+          <a href="produtos.html" class="site-nav-link">Produtos</a>
+          <a href="contato.html" class="site-nav-link active">Contato</a>
+        </nav>
+
+        <div class="flex items-center gap-3 sm:gap-4">
+          <button 
+            type="button" 
+            onclick="openCartDrawer()" 
+            class="cart-trigger" 
+            aria-label="Abrir carrinho de compras"
+          >
+            <span class="text-base">🛒</span>
+            <span class="hidden sm:inline">Carrinho</span>
+            <span class="cart-badge" style="display: none;">0</span>
+          </button>
+
+          <a href="produtos.html" class="btn btn-primary text-xs py-2 px-3 sm:px-4 hidden sm:inline-flex">
+            Ver Produtos
+          </a>
+
+          <button 
+            type="button" 
+            id="mobileMenuToggle" 
+            class="lg:hidden p-2 text-[#EFD78A] hover:text-white rounded border border-[var(--color-border)]"
+            aria-label="Abrir menu de navegação"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Drawer Menu Mobile -->
+  <div class="cart-drawer-overlay lg:hidden" id="mobileMenuOverlay"></div>
+  <aside class="mobile-menu-drawer lg:hidden" id="mobileMenuDrawer" aria-label="Menu Mobile">
+    <div class="flex items-center justify-between pb-6 border-b border-[var(--color-border)] mb-6">
+      <img src="assets/images/logo.png" alt="Loucos por Vitrola" class="h-12 w-auto" />
+      <button type="button" id="mobileMenuClose" class="text-white hover:text-[var(--color-gold-vintage)] p-1" aria-label="Fechar menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <nav class="flex flex-col gap-4 text-base font-medium">
+      <a href="index.html" class="site-nav-link text-lg">Início</a>
+      <a href="sobre-nos.html" class="site-nav-link text-lg">Sobre nós</a>
+      <a href="servicos.html" class="site-nav-link text-lg">Serviços</a>
+      <a href="galeria.html" class="site-nav-link text-lg">Galeria</a>
+      <a href="produtos.html" class="site-nav-link text-lg">Produtos</a>
+      <a href="contato.html" class="site-nav-link text-lg active">Contato</a>
+    </nav>
+    <div class="mt-auto pt-6 border-t border-[var(--color-border)] flex flex-col gap-3">
+      <a href="https://wa.me/5511996176660" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp text-xs py-3 w-full">
+        WhatsApp: (11) 99617-6660
+      </a>
+    </div>
+  </aside>
+
+  <!-- Conteúdo da Página de Contato -->
+  <main id="main-content">
+    
+    <!-- Hero de Contato -->
+    <section class="py-16 lg:py-20 border-b border-[var(--color-border)] bg-[var(--color-black-surface)]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl">
+          <span class="text-xs uppercase font-bold tracking-widest text-[var(--color-primary-light)] mb-3 block">
+            Canais de Atendimento &bull; ABC Paulista &bull; Brasil
+          </span>
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif text-[var(--color-text-main)] mb-6 leading-tight">
+            Vamos conversar sobre o seu toca-discos ou seu próximo vinil.
+          </h1>
+          <p class="text-base sm:text-lg text-[var(--color-text-muted)] leading-relaxed">
+            Tire dúvidas sobre restauração, compra de aparelhos do catálogo, compatibilidade com receivers e dicas de agulhas e cápsulas diretamente com André Luis Denani.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grid de Canais de Contato e Formulário -->
+    <section class="py-16 lg:py-24 border-b border-[var(--color-border)]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          
+          <!-- Coluna 1: Informações de Contato Oficiais (5 colunas) -->
+          <div class="lg:col-span-5 space-y-6">
+            
+            <!-- Card Principal WhatsApp -->
+            <div class="p-6 bg-gradient-to-br from-[#122416] to-[var(--color-black-card)] border border-[#2E7D32]/50 rounded-xl shadow-xl">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-12 h-12 rounded-full bg-[#25D366]/20 border border-[#25D366] flex items-center justify-center text-2xl text-[#25D366]">
+                  💬
+                </div>
+                <div>
+                  <h3 class="text-xs uppercase font-bold tracking-wider text-[#81C784]">Canal Mais Ágil</h3>
+                  <span class="text-xl font-bold text-white font-mono">(11) 99617-6660</span>
+                </div>
+              </div>
+              <p class="text-xs text-[#C8E6C9] opacity-90 mb-4 leading-relaxed">
+                Envie fotos, vídeos do aparelho com som ou solicite orçamentos imediatos diretamente pelo WhatsApp com André Luis Denani.
+              </p>
+              <a 
+                href="https://wa.me/5511996176660?text=Olá,%20André!%20Gostaria%20de%20conversar%20sobre%20toca-discos." 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="btn btn-whatsapp text-xs py-3 px-4 w-full flex items-center justify-center gap-2"
+              >
+                Abrir WhatsApp Direto
+              </a>
+            </div>
+
+            <!-- Dados Institucionais e Localização no ABC -->
+            <div class="p-6 bg-[var(--color-black-card)] border border-[var(--color-border)] rounded-xl space-y-5 text-xs">
+              
+              <div>
+                <span class="text-[var(--color-gold-vintage)] uppercase font-bold tracking-wider block mb-1">
+                  Atendimento Presencial
+                </span>
+                <p class="text-[var(--color-text-main)] font-semibold text-sm">
+                  Região do ABC Paulista &bull; São Paulo - SP
+                </p>
+                <p class="text-[var(--color-text-muted)] mt-1 leading-relaxed">
+                  Bancada técnica estruturada no Grande ABC (Santo André / São Bernardo / São Caetano). Atendimento individualizado mediante agendamento prévio.
+                </p>
+              </div>
+
+              <div class="pt-4 border-t border-[var(--color-border)]">
+                <span class="text-[var(--color-gold-vintage)] uppercase font-bold tracking-wider block mb-1">
+                  Horário de Funcionamento
+                </span>
+                <p class="text-[var(--color-text-main)]">
+                  Segunda a Sexta: <strong>09h às 18h</strong><br>
+                  Sábados: <strong>09h às 13h</strong> (Mediante agendamento)
+                </p>
+              </div>
+
+              <div class="pt-4 border-t border-[var(--color-border)]">
+                <span class="text-[var(--color-gold-vintage)] uppercase font-bold tracking-wider block mb-2">
+                  Redes Sociais Oficiais
+                </span>
+                <div class="flex flex-col gap-2.5">
+                  <a href="https://instagram.com/loucos_por_vitrola" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-[var(--color-text-muted)] hover:text-[var(--color-gold-vintage)] transition-colors">
+                    <span class="text-sm">📸</span>
+                    <span>Instagram: <strong>@loucos_por_vitrola</strong></span>
+                  </a>
+                  <a href="https://facebook.com/loucosporvitrola" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-[var(--color-text-muted)] hover:text-blue-400 transition-colors">
+                    <span class="text-sm">👍</span>
+                    <span>Facebook: <strong>Loucos por Vitrola</strong></span>
+                  </a>
+                  <a href="mailto:contato@loucosporvitrola.com.br" class="flex items-center gap-2 text-[var(--color-text-muted)] hover:text-white transition-colors">
+                    <span class="text-sm">✉️</span>
+                    <span>E-mail: <strong>contato@loucosporvitrola.com.br</strong></span>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Card Logístico de Envio Seguro -->
+            <div class="p-5 bg-[var(--color-black-surface)] border border-[var(--color-border)] rounded-xl text-xs text-[var(--color-text-muted)] leading-relaxed">
+              <strong class="text-[var(--color-gold-vintage)] block mb-1">📦 Vai enviar um aparelho de outro estado?</strong>
+              Antes de postar, fale conosco! Passamos as orientações completas para travar o braço com arame emborrachado, retirar o prato e o contrapeso para não danificar o mancal durante o trajeto.
+            </div>
+
+          </div>
+
+          <!-- Coluna 2: Formulário Inteligente de Contato (7 colunas) -->
+          <div class="lg:col-span-7">
+            <div class="p-6 md:p-8 bg-[var(--color-black-card)] border border-[var(--color-border)] rounded-xl shadow-2xl">
+              
+              <div class="mb-6">
+                <h2 class="text-xl font-serif text-[var(--color-gold-vintage)] mb-2">Envie sua Mensagem para André Luis Denani</h2>
+                <p class="text-xs text-[var(--color-text-muted)] leading-relaxed">
+                  Preencha os campos abaixo. Ao clicar em enviar, sua mensagem será compilada e aberta diretamente no WhatsApp da oficina.
+                </p>
+              </div>
+
+              <form id="contactForm" class="space-y-4">
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="contactName" class="block text-xs font-semibold text-[var(--color-text-main)] mb-1">
+                      Seu Nome Completo *
+                    </label>
+                    <input 
+                      type="text" 
+                      id="contactName" 
+                      required 
+                      placeholder="Ex: Carlos Eduardo" 
+                      class="w-full bg-[var(--color-black-pure)] border border-[var(--color-border)] rounded p-2.5 text-xs text-[var(--color-text-main)] focus:border-[var(--color-gold-vintage)] focus:outline-none"
+                    />
+                  </div>
+
+                  <div>
+                    <label for="contactPhone" class="block text-xs font-semibold text-[var(--color-text-main)] mb-1">
+                      WhatsApp com DDD *
+                    </label>
+                    <input 
+                      type="tel" 
+                      id="contactPhone" 
+                      required 
+                      placeholder="Ex: (11) 98765-4321" 
+                      class="w-full bg-[var(--color-black-pure)] border border-[var(--color-border)] rounded p-2.5 text-xs text-[var(--color-text-main)] focus:border-[var(--color-gold-vintage)] focus:outline-none"
+                    />
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="contactLocation" class="block text-xs font-semibold text-[var(--color-text-main)] mb-1">
+                      Sua Cidade / Estado
+                    </label>
+                    <input 
+                      type="text" 
+                      id="contactLocation" 
+                      placeholder="Ex: Santo André - SP" 
+                      class="w-full bg-[var(--color-black-pure)] border border-[var(--color-border)] rounded p-2.5 text-xs text-[var(--color-text-main)] focus:border-[var(--color-gold-vintage)] focus:outline-none"
+                    />
+                  </div>
+
+                  <div>
+                    <label for="contactSubject" class="block text-xs font-semibold text-[var(--color-text-main)] mb-1">
+                      Assunto Principal *
+                    </label>
+                    <select 
+                      id="contactSubject" 
+                      required 
+                      class="w-full bg-[var(--color-black-pure)] border border-[var(--color-border)] rounded p-2.5 text-xs text-[var(--color-text-main)] focus:border-[var(--color-gold-vintage)] focus:outline-none"
+                    >
+                      <option value="Restauração de Toca-Discos">Restauração de Toca-Discos</option>
+                      <option value="Comprar Aparelho do Catálogo">Comprar Aparelho do Catálogo</option>
+                      <option value="Troca de Agulha ou Cápsula">Troca de Agulha ou Cápsula</option>
+                      <option value="Polimento/Tampa de Acrílico">Polimento / Confecção de Tampa</option>
+                      <option value="Dúvida Técnica / Compatibilidade">Dúvida Técnica / Compatibilidade</option>
+                      <option value="Outro Assunto">Outro Assunto</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label for="contactTurntableModel" class="block text-xs font-semibold text-[var(--color-text-main)] mb-1">
+                    Marca e Modelo do seu Aparelho (se houver)
+                  </label>
+                  <input 
+                    type="text" 
+                    id="contactTurntableModel" 
+                    placeholder="Ex: Gradiente D30, Garrard 6300, Polyvox TD 2000, Pioneer PL-600..." 
+                    class="w-full bg-[var(--color-black-pure)] border border-[var(--color-border)] rounded p-2.5 text-xs text-[var(--color-text-main)] focus:border-[var(--color-gold-vintage)] focus:outline-none"
+                  />
+                </div>
+
+                <div>
+                  <label for="contactMessage" class="block text-xs font-semibold text-[var(--color-text-main)] mb-1">
+                    Mensagem / Detalhes dos Sintomas *
+                  </label>
+                  <textarea 
+                    id="contactMessage" 
+                    rows="4" 
+                    required 
+                    placeholder="Conte o que o aparelho está apresentando (ex: rotação arrastada, retorno automático falhando, ruído no som...) ou qual vitrola do catálogo você deseja adquirir." 
+                    class="w-full bg-[var(--color-black-pure)] border border-[var(--color-border)] rounded p-2.5 text-xs text-[var(--color-text-main)] focus:border-[var(--color-gold-vintage)] focus:outline-none"
+                  ></textarea>
+                </div>
+
+                <div class="pt-2">
+                  <button type="submit" class="btn btn-whatsapp w-full py-3.5 text-xs uppercase tracking-wider font-bold shadow-lg">
+                    Enviar Mensagem via WhatsApp Oficial
+                  </button>
+                  <span class="block text-[10px] text-center text-[var(--color-text-muted)] mt-2">
+                    Não solicitamos senhas nem cartões. O atendimento é direto, ético e humanizado.
+                  </span>
+                </div>
+
+              </form>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO NOVA: Mapa Regional de Acesso & Perguntas Frequentes de Atendimento -->
+    <section class="py-16 bg-[var(--color-black-surface)] border-b border-[var(--color-border)]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          
+          <!-- Card de Localização no ABC Paulista -->
+          <div class="p-6 bg-[var(--color-black-card)] border border-[var(--color-border)] rounded-xl">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-xl">📍</span>
+              <h3 class="text-base font-serif font-bold text-[var(--color-gold-vintage)]">Como Chegar à Nossa Bancada</h3>
+            </div>
+            <p class="text-xs text-[var(--color-text-muted)] leading-relaxed mb-4">
+              Localizada estrategicamente no Grande ABC paulista, nossa oficina tem fácil acesso para quem vem da capital ou do litoral pela Rodovia Anchieta e Avenida dos Estados.
+            </p>
+            <div class="space-y-3 text-xs text-[var(--color-text-main)]">
+              <div class="p-3 bg-black/40 rounded border border-[var(--color-border)] flex items-start gap-3">
+                <span class="text-base">🚗</span>
+                <div>
+                  <strong>De Carro:</strong> Fácil acesso via Rodovia Anchieta (saídas para São Bernardo / Santo André) ou Av. dos Estados (São Caetano). Estacionamento fácil no local.
+                </div>
+              </div>
+              <div class="p-3 bg-black/40 rounded border border-[var(--color-border)] flex items-start gap-3">
+                <span class="text-base">🚆</span>
+                <div>
+                  <strong>De Trem/CPTM:</strong> Próximo às estações da Linha 10-Turquesa da CPTM com conexão direta para a Estação Tamanduateí (Linha 2-Verde do Metrô).
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Rápido de Atendimento -->
+          <div class="space-y-3 text-xs">
+            <h3 class="text-base font-serif font-bold text-[var(--color-gold-vintage)] mb-4 flex items-center gap-2">
+              <span>❓</span> Perguntas Frequentes de Atendimento
+            </h3>
+
+            <div class="p-4 bg-[var(--color-black-card)] border border-[var(--color-border)] rounded-lg">
+              <h4 class="font-bold text-[var(--color-text-main)] mb-1">Como agendar uma visita presencial?</h4>
+              <p class="text-[var(--color-text-muted)] leading-relaxed">
+                Basta enviar uma mensagem no WhatsApp (11) 99617-6660 com pelo menos 24h de antecedência para combinarmos o melhor dia e horário na bancada.
+              </p>
+            </div>
+
+            <div class="p-4 bg-[var(--color-black-card)] border border-[var(--color-border)] rounded-lg">
+              <h4 class="font-bold text-[var(--color-text-main)] mb-1">Qual o tempo médio de resposta no WhatsApp?</h4>
+              <p class="text-[var(--color-text-muted)] leading-relaxed">
+                Respondemos normalmente em menos de 30 minutos em horário comercial (09h às 18h).
+              </p>
+            </div>
+
+            <div class="p-4 bg-[var(--color-black-card)] border border-[var(--color-border)] rounded-lg">
+              <h4 class="font-bold text-[var(--color-text-main)] mb-1">Quais as formas de pagamento aceitas?</h4>
+              <p class="text-[var(--color-text-muted)] leading-relaxed">
+                Pix com desconto à vista, transferência bancária ou cartão de crédito parcelado.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé Global -->
+  <footer class="site-footer py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-10 border-b border-[var(--color-border)]">
+        <div>
+          <img src="assets/images/logo.png" alt="Loucos por Vitrola" class="h-16 w-auto mb-4" />
+          <p class="text-xs text-[var(--color-text-muted)] leading-relaxed mb-4">
+            Especialistas na restauração de aparelhos vintage, venda de equipamentos calibrados e celebração da cultura analógica no ABC Paulista.
+          </p>
+          <span class="text-xs italic text-[var(--color-gold-vintage)]">"A arte em toca discos"</span>
+        </div>
+        <div>
+          <h4 class="text-xs uppercase font-bold tracking-widest text-[var(--color-gold-vintage)] mb-4">Navegação</h4>
+          <ul class="space-y-2 text-xs text-[var(--color-text-muted)]">
+            <li><a href="index.html" class="hover:text-white transition-colors">Início</a></li>
+            <li><a href="sobre-nos.html" class="hover:text-white transition-colors">Sobre a Oficina</a></li>
+            <li><a href="servicos.html" class="hover:text-white transition-colors">Serviços Técnicos</a></li>
+            <li><a href="galeria.html" class="hover:text-white transition-colors">Galeria de Projetos</a></li>
+            <li><a href="produtos.html" class="hover:text-white transition-colors">Catálogo de Vitrolas</a></li>
+            <li><a href="contato.html" class="hover:text-white transition-colors">Fale Conosco</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs uppercase font-bold tracking-widest text-[var(--color-gold-vintage)] mb-4">Marcas Atendidas</h4>
+          <ul class="space-y-1.5 text-xs text-[var(--color-text-muted)]">
+            <li>&bull; Gradiente (D30, B25, TT-II)</li>
+            <li>&bull; Garrard (6300, S95, DD75)</li>
+            <li>&bull; Polyvox (TD 2000, TD 6000)</li>
+            <li>&bull; Pioneer &bull; Technics &bull; Philips</li>
+            <li>&bull; Sony &bull; CCE &bull; Sansui &bull; Marantz</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs uppercase font-bold tracking-widest text-[var(--color-gold-vintage)] mb-4">Atendimento</h4>
+          <ul class="space-y-2.5 text-xs text-[var(--color-text-muted)]">
+            <li class="flex items-center gap-2">
+              <span class="text-green-500 font-bold">WhatsApp:</span>
+              <a href="https://wa.me/5511996176660" target="_blank" rel="noopener noreferrer" class="hover:text-white font-mono">
+                (11) 99617-6660
+              </a>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-[var(--color-gold-vintage)]">Instagram:</span>
+              <a href="https://instagram.com/loucos_por_vitrola" target="_blank" rel="noopener noreferrer" class="hover:text-white">
+                @loucos_por_vitrola
+              </a>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-blue-400">Facebook:</span>
+              <a href="https://facebook.com/loucosporvitrola" target="_blank" rel="noopener noreferrer" class="hover:text-white">
+                Loucos por Vitrola
+              </a>
+            </li>
+            <li class="pt-2 text-[11px] text-[var(--color-text-muted)]">
+              Localização: Região do ABC Paulista &bull; São Paulo - SP<br>
+              Envios seguros com embalagens especiais para todo o Brasil.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-[var(--color-text-muted)] gap-4">
+        <p>&copy; <span class="current-year">2026</span> Loucos por Vitrola. Todos os direitos reservados.</p>
+        <p class="italic text-[var(--color-gold-muted)]">Construído com fidelidade analógica, HTML5, CSS3 e Vanilla JS.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botão Flutuante do WhatsApp -->
+  <a 
+    href="https://wa.me/5511996176660" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    class="fixed bottom-6 right-6 z-40 bg-[#25D366] hover:bg-[#20BA5A] text-black w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110"
+    aria-label="Falar conosco pelo WhatsApp"
+  >
+    <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+    </svg>
+  </a>
+
+  <div id="productModalContainer"></div>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Lógica do Formulário de Contato -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("contactForm");
+      if (!form) return;
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        
+        const name = document.getElementById("contactName").value.trim();
+        const phone = document.getElementById("contactPhone").value.trim();
+        const location = document.getElementById("contactLocation").value.trim();
+        const subject = document.getElementById("contactSubject").value;
+        const model = document.getElementById("contactTurntableModel").value.trim();
+        const message = document.getElementById("contactMessage").value.trim();
+
+        if (!name || !phone || !message) {
+          alert("Por favor, preencha os campos obrigatórios (*).");
+          return;
+        }
+
+        let compiledMessage = `Olá, André! Sou visitante do site *Loucos por Vitrola*.\n\n`;
+        compiledMessage += `*Nome:* ${name}\n`;
+        compiledMessage += `*Telefone/WhatsApp:* ${phone}\n`;
+        if (location) compiledMessage += `*Localização:* ${location}\n`;
+        compiledMessage += `*Assunto:* ${subject}\n`;
+        if (model) compiledMessage += `*Modelo do Aparelho:* ${model}\n`;
+        compiledMessage += `\n*Mensagem:*\n${message}`;
+
+        const encoded = encodeURIComponent(compiledMessage);
+        const url = `https://wa.me/5511996176660?text=${encoded}`;
+
+        window.open(url, "_blank");
+      });
+    });
+  </script>
+</body>
+</html>
